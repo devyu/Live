@@ -344,6 +344,7 @@
 				048A62451E4C4519008AC08A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

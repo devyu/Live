@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>好不好？</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>好不好？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>好不好？</string>
 	<key>UILaunchStoryboardName</key>
@@ -35,8 +37,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
