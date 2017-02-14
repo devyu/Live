@@ -17,6 +17,7 @@
 		048A624E1E4C48AE008AC08A /* CatchVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A624D1E4C48AE008AC08A /* CatchVideoViewController.m */; };
 		048A62511E4C4912008AC08A /* CatchAudioAndVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A62501E4C4912008AC08A /* CatchAudioAndVideoViewController.m */; };
 		048A62541E4C5352008AC08A /* NSObject+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A62531E4C5352008AC08A /* NSObject+Alert.m */; };
+		048AB0441E52E2C300D7B882 /* VideoRecordingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AB0431E52E2C300D7B882 /* VideoRecordingVC.m */; };
 		04E46EFB1E51AB04002A5485 /* BeautifyFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E46EFA1E51AB04002A5485 /* BeautifyFilterViewController.m */; };
 		758DD0E540520A71639FF517 /* libPods-LiveDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA456868CB8B83C7C70E4ECE /* libPods-LiveDemo.a */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,8 @@
 		048A62501E4C4912008AC08A /* CatchAudioAndVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchAudioAndVideoViewController.m; sourceTree = "<group>"; };
 		048A62521E4C5352008AC08A /* NSObject+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Alert.h"; sourceTree = "<group>"; };
 		048A62531E4C5352008AC08A /* NSObject+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Alert.m"; sourceTree = "<group>"; };
+		048AB0421E52E2C300D7B882 /* VideoRecordingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordingVC.h; sourceTree = "<group>"; };
+		048AB0431E52E2C300D7B882 /* VideoRecordingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordingVC.m; sourceTree = "<group>"; };
 		04E46EF91E51AB04002A5485 /* BeautifyFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautifyFilterViewController.h; sourceTree = "<group>"; };
 		04E46EFA1E51AB04002A5485 /* BeautifyFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautifyFilterViewController.m; sourceTree = "<group>"; };
 		4FAC846D851F25C2E30FA7D6 /* Pods-LiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveDemo/Pods-LiveDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				048A62531E4C5352008AC08A /* NSObject+Alert.m */,
 				04E46EF91E51AB04002A5485 /* BeautifyFilterViewController.h */,
 				04E46EFA1E51AB04002A5485 /* BeautifyFilterViewController.m */,
+				048AB0421E52E2C300D7B882 /* VideoRecordingVC.h */,
+				048AB0431E52E2C300D7B882 /* VideoRecordingVC.m */,
 				048A62381E4C4519008AC08A /* Main.storyboard */,
 				048A623B1E4C4519008AC08A /* Assets.xcassets */,
 				048A623D1E4C4519008AC08A /* LaunchScreen.storyboard */,
@@ -259,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048AB0441E52E2C300D7B882 /* VideoRecordingVC.m in Sources */,
 				04E46EFB1E51AB04002A5485 /* BeautifyFilterViewController.m in Sources */,
 				048A62341E4C4519008AC08A /* AppDelegate.m in Sources */,
 				048A62311E4C4519008AC08A /* main.m in Sources */,

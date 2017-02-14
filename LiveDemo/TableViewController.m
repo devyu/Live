@@ -23,7 +23,7 @@ static NSString *const cellIdent = @"liveCell";
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  _dataSource = @[@"捕捉图片(真机)", @"捕捉视频(真机)", @"捕捉音视频(真机)", @"美颜"];
+  _dataSource = @[@"捕捉图片(真机)", @"捕捉视频(真机)", @"捕捉音视频(真机)", @"使用GPUImage美颜", @"保存美颜处理后的视频"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdent];
 }
 
@@ -53,6 +53,8 @@ static NSString *const cellIdent = @"liveCell";
     [self.navigationController pushViewController:[CatchAudioAndVideoViewController new] animated:YES];
   } else if (indexPath.row == 3) {
     [self performSegueWithIdentifier:@"BeautifyFilterVC" sender:indexPath];
+  } else if (indexPath.row == 4) {
+    [self performSegueWithIdentifier:@"VideoRecordingSegue" sender:indexPath];
   }
 }
 

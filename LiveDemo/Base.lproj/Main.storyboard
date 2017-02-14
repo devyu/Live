@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +28,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="kaa-4l-7sv" kind="show" identifier="BeautifyFilterVC" id="Oe9-GO-Oq3"/>
+                                    <segue destination="OKv-CI-qbV" kind="show" identifier="VideoRecordingSegue" trigger="accessoryAction" id="7XI-yN-ZSp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,7 +101,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nK2-i5-Va5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397.1014492753625" y="129.61956521739131"/>
+            <point key="canvasLocation" x="2548" y="-20"/>
+        </scene>
+        <!--保存美颜视频-->
+        <scene sceneID="qSv-dg-Irb">
+            <objects>
+                <viewController title="保存美颜视频" id="OKv-CI-qbV" customClass="VideoRecordingVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gnX-eY-0IK"/>
+                        <viewControllerLayoutGuide type="bottom" id="CIA-W5-B7J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LMQ-n1-Xi6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录制时长" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-8g-7XS">
+                                <rect key="frame" x="314" y="87" width="80" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ZlW-zS-Y1O"/>
+                                    <constraint firstAttribute="height" constant="29" id="pbG-7f-6ec"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="0.17912353289999999" green="0.9842774272" blue="0.098746445690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-1k-miK">
+                                <rect key="frame" x="86" y="611" width="242" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nDE-gH-mMZ"/>
+                                    <constraint firstAttribute="width" constant="238" id="zAI-xZ-evt"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="OKv-CI-qbV" eventType="valueChanged" id="H4D-Fe-bWw"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JQt-8g-7XS" firstAttribute="top" secondItem="gnX-eY-0IK" secondAttribute="bottom" constant="23" id="7Z1-Lj-eTP"/>
+                            <constraint firstItem="JQt-8g-7XS" firstAttribute="trailing" secondItem="LMQ-n1-Xi6" secondAttribute="trailingMargin" id="b7X-3M-2ix"/>
+                            <constraint firstItem="BSW-1k-miK" firstAttribute="centerX" secondItem="LMQ-n1-Xi6" secondAttribute="centerX" id="fgh-Jb-thA"/>
+                            <constraint firstItem="CIA-W5-B7J" firstAttribute="top" secondItem="BSW-1k-miK" secondAttribute="bottom" constant="51" id="tbc-Nq-ovI"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="录制视频" id="Apb-FO-XGO" userLabel="录制">
+                        <barButtonItem key="rightBarButtonItem" title="录制" id="cPt-gn-SFQ">
+                            <connections>
+                                <action selector="record:" destination="OKv-CI-qbV" id="Pyw-ZG-Ngt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="rightBarItem" destination="cPt-gn-SFQ" id="fNo-tk-aSX"/>
+                        <outlet property="timeLabel" destination="JQt-8g-7XS" id="Lss-FA-Cng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Tr-MT-UBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2208.695652173913" y="910.59782608695662"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nrU-oz-JZg">
