@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AiI-hj-Rro">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,17 +14,20 @@
             <objects>
                 <tableViewController id="55F-fx-RUm" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v5J-G5-IxE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6OK-kT-GZH">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="6OK-kT-GZH">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OK-kT-GZH" id="cOK-68-hRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="kaa-4l-7sv" kind="show" identifier="BeautifyFilterVC" id="Oe9-GO-Oq3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -37,6 +40,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGv-ns-Ol2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1527.2" y="160.56971514242881"/>
+        </scene>
+        <!--美颜-->
+        <scene sceneID="Z8W-8Q-Qbq">
+            <objects>
+                <viewController id="kaa-4l-7sv" customClass="BeautifyFilterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ve9-i3-6jA"/>
+                        <viewControllerLayoutGuide type="bottom" id="UkH-jP-rfZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vRh-g0-4Ew">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="A8N-RZ-hLu">
+                                <rect key="frame" x="107" y="635" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0a4-6R-ity"/>
+                                    <constraint firstAttribute="width" constant="196" id="zTx-fl-FdK"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="beatutifyFilterValueChange:" destination="kaa-4l-7sv" eventType="valueChanged" id="stQ-yD-Ux2"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美颜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXY-Y4-OtI">
+                                <rect key="frame" x="80" y="645" width="21" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="磨皮" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSB-bF-RG1">
+                                <rect key="frame" x="80" y="682" width="21" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-eM-41f">
+                                <rect key="frame" x="107" y="673" width="200" height="31"/>
+                                <connections>
+                                    <action selector="brightnessFilterValueChange:" destination="kaa-4l-7sv" eventType="valueChanged" id="UkY-K7-sl9"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dSB-bF-RG1" firstAttribute="top" secondItem="IXY-Y4-OtI" secondAttribute="bottom" constant="25" id="3wj-eS-Jsi"/>
+                            <constraint firstItem="Sde-eM-41f" firstAttribute="leading" secondItem="A8N-RZ-hLu" secondAttribute="leading" id="DeZ-Px-27W"/>
+                            <constraint firstItem="Sde-eM-41f" firstAttribute="trailing" secondItem="A8N-RZ-hLu" secondAttribute="trailing" id="LwS-iP-1Ok"/>
+                            <constraint firstItem="Sde-eM-41f" firstAttribute="leading" secondItem="dSB-bF-RG1" secondAttribute="trailing" constant="8" symbolic="YES" id="MRs-S9-dm9"/>
+                            <constraint firstItem="IXY-Y4-OtI" firstAttribute="leading" secondItem="dSB-bF-RG1" secondAttribute="leading" id="UM2-mk-dFl"/>
+                            <constraint firstItem="UkH-jP-rfZ" firstAttribute="top" secondItem="Sde-eM-41f" secondAttribute="bottom" constant="33" id="Y6k-8L-lzQ"/>
+                            <constraint firstItem="Sde-eM-41f" firstAttribute="top" secondItem="A8N-RZ-hLu" secondAttribute="bottom" constant="8" id="bEg-Az-4QG"/>
+                            <constraint firstItem="Sde-eM-41f" firstAttribute="centerX" secondItem="vRh-g0-4Ew" secondAttribute="centerX" id="sIz-04-Gfm"/>
+                            <constraint firstItem="dSB-bF-RG1" firstAttribute="centerY" secondItem="Sde-eM-41f" secondAttribute="centerY" id="x5R-r3-7nS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="美颜" id="csf-7R-jYd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nK2-i5-Va5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397.1014492753625" y="129.61956521739131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nrU-oz-JZg">

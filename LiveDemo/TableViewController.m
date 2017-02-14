@@ -10,6 +10,7 @@
 #import "CatchImageViewController.h"
 #import "CatchVideoViewController.h"
 #import "CatchAudioAndVideoViewController.h"
+#import "BeautifyFilterViewController.h"
 
 @interface TableViewController ()
 @property (strong, nonatomic) NSArray *dataSource;
@@ -22,7 +23,7 @@ static NSString *const cellIdent = @"liveCell";
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  _dataSource = @[@"捕捉图片(真机)", @"捕捉视频(真机)", @"捕捉音视频(真机)"];
+  _dataSource = @[@"捕捉图片(真机)", @"捕捉视频(真机)", @"捕捉音视频(真机)", @"美颜"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdent];
 }
 
@@ -50,8 +51,12 @@ static NSString *const cellIdent = @"liveCell";
     [self.navigationController pushViewController:[CatchVideoViewController new] animated:YES];
   } else if (indexPath.row == 2) {
     [self.navigationController pushViewController:[CatchAudioAndVideoViewController new] animated:YES];
+  } else if (indexPath.row == 3) {
+    [self performSegueWithIdentifier:@"BeautifyFilterVC" sender:indexPath];
   }
 }
+
+
 
 
 /*
@@ -88,14 +93,12 @@ static NSString *const cellIdent = @"liveCell";
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  NSIndexPath *index = sender;
+  UIViewController *destionationVC = [segue destinationViewController];
+  destionationVC.title = [NSString stringWithFormat:@"%@", self.dataSource[index.row]];
 }
-*/
 
 @end
